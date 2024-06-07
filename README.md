@@ -19,8 +19,6 @@ By...
 3. [Setup and Installation](#setup-and-installation)
 4. [Usage](#usage)
 5. [Project Structure](#project-structure)
-6. [Contributing](#contributing)
-7. [License](#license)
 
 ## Project Overview
 
