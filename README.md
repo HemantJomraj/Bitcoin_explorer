@@ -12,8 +12,6 @@ By...
 
 - Varadmurty Mohod - 002772803
 
-![MW-FS333_bigdea_20170814194201_NS](https://github.com/HemantJomraj/Bitcoin_explorer/assets/69577585/e879c478-82fb-4cea-b828-639781e5eaf4)
-
 ## 📋 Table of Contents
 
 1. [Project Overview](#project-overview)
