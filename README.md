@@ -6,7 +6,7 @@ Welcome to the **Bitcoin Explorer**! This project is brought to you by the dynam
 
 By...
 
-- Hemant 
+- Hemant Jomraj - 002722469
 
 - Keyur Modi - 002770075
 
