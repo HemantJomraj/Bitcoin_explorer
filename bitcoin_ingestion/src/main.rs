@@ -53,7 +53,6 @@ fn main() {
         }
 
         // Sleep for 60 seconds before making the next API call.
-        // This helps to avoid making too many requests in a short period of time.
         std::thread::sleep(Duration::from_secs(60));
     }
 }
