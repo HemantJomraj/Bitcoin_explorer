@@ -20,6 +20,7 @@ By...
 4. [Usage](#usage)
 5. [Project Structure](#project-structure)
 
+
 ## Project Overview
 
 Our Bitcoin Explorer is designed to:
