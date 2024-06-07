@@ -12,7 +12,13 @@ By...
 
 - Varadmurty Mohod - 002772803
 
+## 📋 Table of Contents
 
+1. [Project Overview](#project-overview)
+2. [Getting Started](#getting-started)
+3. [Setup and Installation](#setup-and-installation)
+4. [Usage](#usage)
+5. [Project Structure](#project-structure)
 
 
 ## Project Overview
