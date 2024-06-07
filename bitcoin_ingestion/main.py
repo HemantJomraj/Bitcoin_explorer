@@ -5,11 +5,12 @@ def connect():
     """ Connect to the PostgreSQL database server """
     conn = None
     try:
+        # Read connection parameters from a configuration file
         params = config()
 
         # connect to the PostgreSQL server
         print('Connecting to the PostgreSQL database...')
-        conn = psycopg2.connect(**params)
+        
         
         cur = conn.cursor()
         
