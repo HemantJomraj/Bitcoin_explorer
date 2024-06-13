@@ -2,10 +2,15 @@ use reqwest::blocking::Client;
 use serde_json::Value;
 use std::time::Duration;
 use postgres::{Client as PgClient, NoTls};
+use std::env;
 
 fn main() {
     let client = Client::new();
-    let mut pg_client = PgClient::connect("host=localhost user=postgres dbname=bitcoin_explorer port=5430", NoTls).unwrap();
+    let db_host = env::var("DB_HOST").unwrap_or_else(|_| "localhost".to_string());
+    let mut pg_client = PgClient::connect(
+        &format!("host={} user=postgres dbname=bitcoin_explorer port=5430", db_host),
+        NoTls
+    ).unwrap();
 
     loop {
         let res = client.get("https://api.blockcypher.com/v1/btc/main")

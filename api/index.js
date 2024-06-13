@@ -8,7 +8,7 @@ const port = 3000;
 app.use(cors());
 
 const client = new Client({
-  host: 'localhost',
+  host: 'host.docker.internal',
   user: 'postgres',
   database: 'bitcoin_explorer',
   port: 5430,
