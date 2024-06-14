@@ -68,7 +68,7 @@ Before you get started, make sure you have the following installed:
 
 4. **Visit the User Interface**
 
-    Open your favorite web browser (yes, even IE if you must) and navigate to `http://localhost:3000`.
+    Open your favorite web browser (yes, even IE if you must) and navigate to `http://localhost:5001`.
 
 ### Configuration
 
