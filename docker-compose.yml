@@ -24,7 +24,7 @@ services:
       context: ./frontend
     container_name: frontend
     ports:
-      - "5001:5000"
+      - "5001:3000"  # Changed the internal port to avoid conflict with API
     depends_on:
       - api
     restart: always
