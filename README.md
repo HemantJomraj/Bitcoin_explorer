@@ -84,7 +84,3 @@ Before you get started, make sure you have the following installed:
 ![38dqvy](https://github.com/HemantJomraj/Bitcoin_explorer/assets/69577585/f72339b9-763f-423d-94b4-c804e1f54d93)
 
 ## 📁 Project Structure
-├── Dockerfile               # Docker configuration
-├── README.md                # This amazing readme
-└── .github/
-    └── workflows/           # CI/CD workflows
