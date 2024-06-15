@@ -32,7 +32,7 @@ Our Bitcoin Explorer is designed to:
 ### Key Features
 
 - **Real-time Block Height**: See the current block height in real-time.
-- **Unique Metrics**: Get insights into unique metrics derived from both on-chain and off-chain data.
+- **Unique Metrics**: Get insights into unique metrics derived from both on-chain and off-chain data. For instance, Real-time Market Price.
 - **Smooth UI**: Our user interface is so smooth, it could charm a snake.
 
 ## 🛠 Getting Started
