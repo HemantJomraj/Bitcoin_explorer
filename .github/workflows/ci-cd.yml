@@ -1,4 +1,4 @@
-name: Build and Push Docker Image
+name: Build and Deploy
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build-and-push:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -43,8 +43,8 @@ jobs:
           tags: ${{ secrets.DOCKER_USERNAME }}/frontend:latest
           context: ./frontend
 
-  deploy-frontend:
-    needs: build-and-push
+  deploy:
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
