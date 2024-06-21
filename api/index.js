@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
-const { Client } = require('pg');
 const axios = require('axios');
+const { Client } = require('pg');
 
 const app = express();
 const port = 3000;
@@ -32,6 +32,26 @@ app.get('/api/market-price', async (req, res) => {
     const response = await axios.get('https://api.coindesk.com/v1/bpi/currentprice/BTC.json');
     const marketPrice = response.data.bpi.USD.rate_float;
     res.json({ market_price: marketPrice });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server error');
+  }
+});
+
+app.get('/api/transaction-count', async (req, res) => {
+  try {
+    const result = await client.query('SELECT transaction_count FROM transaction_data ORDER BY created_at DESC LIMIT 1');
+    res.json(result.rows[0]);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server error');
+  }
+});
+
+app.get('/api/hash-rate', async (req, res) => {
+  try {
+    const result = await client.query('SELECT hash_rate FROM hash_rate_data ORDER BY created_at DESC LIMIT 1');
+    res.json(result.rows[0]);
   } catch (err) {
     console.error(err);
     res.status(500).send('Server error');

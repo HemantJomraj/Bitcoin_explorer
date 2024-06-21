@@ -1,4 +1,3 @@
-// bitcoin_explorer/frontend/src/components/BlockHeight.tsx
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -15,7 +14,10 @@ const BlockHeight: React.FC = () => {
       }
     };
 
-    fetchBlockHeight();
+    fetchBlockHeight(); // Fetch the initial block height
+    const interval = setInterval(fetchBlockHeight, 5000); // Fetch every 5 seconds
+
+    return () => clearInterval(interval); // Cleanup the interval on component unmount
   }, []);
 
   return (
