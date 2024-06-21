@@ -77,7 +77,7 @@ Before you get started, make sure you have the following installed:
 
 ## 🚀 Usage
 
-1. **Launch the app**: Follow the setup instructions above.
+1. **Launch the app**: Follow the setup instructions above
 2. **Real-time data**: Watch the real-time block height on the UI.
 3. **Metrics Galore**: Explore unique on-chain and off-chain metrics.
 4. **Brag**: Tell your friends you built a Bitcoin Explorer, and they’ll think you’re the next Satoshi Nakamoto.
