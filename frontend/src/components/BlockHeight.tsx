@@ -1,5 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
+
+const BlockHeightContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const BlockHeightValue = styled.div`
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-top: 10px;
+`;
 
 const BlockHeight: React.FC = () => {
   const [blockHeight, setBlockHeight] = useState<number | null>(null);
@@ -8,27 +21,27 @@ const BlockHeight: React.FC = () => {
     const fetchBlockHeight = async () => {
       try {
         const response = await axios.get('http://localhost:3000/api/block-height');
+        console.log('Fetched block height response:', response.data);
         setBlockHeight(response.data.block_height);
       } catch (error) {
         console.error('Error fetching block height:', error);
       }
     };
 
-    fetchBlockHeight(); // Fetch the initial block height
-    const interval = setInterval(fetchBlockHeight, 5000); // Fetch every 5 seconds
+    fetchBlockHeight();
+    const interval = setInterval(fetchBlockHeight, 10000); // Refresh every 10 seconds
 
-    return () => clearInterval(interval); // Cleanup the interval on component unmount
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <div>
-      <h2>Current Block Height</h2>
+    <BlockHeightContainer>
       {blockHeight !== null ? (
-        <p>{blockHeight}</p>
+        <BlockHeightValue>{blockHeight}</BlockHeightValue>
       ) : (
-        <p>Loading...</p>
+        <div>Loading...</div>
       )}
-    </div>
+    </BlockHeightContainer>
   );
 };
 

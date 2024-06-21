@@ -1,5 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
+
+const TransactionCountContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const TransactionCountValue = styled.div`
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-top: 10px;
+`;
 
 const TransactionCount: React.FC = () => {
   const [transactionCount, setTransactionCount] = useState<number | null>(null);
@@ -15,20 +28,19 @@ const TransactionCount: React.FC = () => {
     };
 
     fetchTransactionCount();
-    const interval = setInterval(fetchTransactionCount, 60000); // Fetch every 60 seconds
+    const interval = setInterval(fetchTransactionCount, 10000); // Refresh every 10 seconds
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div>
-      <h2>Transaction Count</h2>
+    <TransactionCountContainer>
       {transactionCount !== null ? (
-        <p>{transactionCount}</p>
+        <TransactionCountValue>{transactionCount}</TransactionCountValue>
       ) : (
-        <p>Loading...</p>
+        <div>Loading...</div>
       )}
-    </div>
+    </TransactionCountContainer>
   );
 };
 
