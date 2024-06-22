@@ -2,16 +2,14 @@ version: '3.8'
 
 services:
   bitcoin_ingestion:
-    build:
-      context: ./bitcoin_ingestion
+    image: hemantjomraj/bitcoin_ingestion:latest
     container_name: bitcoin_ingestion
     environment:
       - DB_HOST=host.docker.internal
     restart: always
 
   api:
-    build:
-      context: ./api
+    image: hemantjomraj/api:latest
     container_name: api
     ports:
       - "3000:3000"
@@ -20,8 +18,7 @@ services:
     restart: always
 
   frontend:
-    build:
-      context: ./frontend
+    image: hemantjomraj/frontend:latest
     container_name: frontend
     ports:
       - "5001:3000"
