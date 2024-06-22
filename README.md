@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-# Bitcoin_explorer
-
-## Everything in Master.
-=======
 # Bitcoin Explorer 
 ![crypto-memes-meta](https://github.com/HemantJomraj/Bitcoin_explorer/assets/69577585/78bfb896-d991-4354-987e-b3ac86ab9c3e)
 
