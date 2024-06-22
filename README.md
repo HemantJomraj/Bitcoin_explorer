@@ -68,12 +68,12 @@ Before you get started, make sure you have the following installed:
 
 4. **Visit the User Interface**
 
-    Open your favorite web browser (yes, even IE if you must) and navigate to `http://localhost:5001`.
+    Open your favorite web browser (yes, even IE if you must) and navigate to `http://localhost:5001`
 
 ### Configuration
 
 - **Database**: We are using a SQL database. You can configure it in the `database/config.rs` file.
-- **Bitcoin Client**: The Rust ingestion program calls the Bitcoin client to fetch the data. Configuration can be found in `ingestion/config.rs`.
+- **Bitcoin Client**: The Rust ingestion program calls the Bitcoin client to fetch the data. Configuration can be found in `ingestion/config.rs`
 
 ## 🚀 Usage
 
@@ -81,4 +81,5 @@ Before you get started, make sure you have the following installed:
 2. **Real-time data**: Watch the real-time block height on the UI.
 3. **Metrics Galore**: Explore unique on-chain and off-chain metrics.
 4. **Brag**: Tell your friends you built a Bitcoin Explorer, and they’ll think you’re the next Satoshi Nakamoto.
+
 ![38dqvy](https://github.com/HemantJomraj/Bitcoin_explorer/assets/69577585/f72339b9-763f-423d-94b4-c804e1f54d93)
