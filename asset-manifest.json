@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Bitcoin_explorer/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/Bitcoin_explorer/static/js/main.083e1719.chunk.js",
+    "main.js.map": "/Bitcoin_explorer/static/js/main.083e1719.chunk.js.map",
+    "runtime-main.js": "/Bitcoin_explorer/static/js/runtime-main.c34ec40e.js",
+    "runtime-main.js.map": "/Bitcoin_explorer/static/js/runtime-main.c34ec40e.js.map",
+    "static/js/2.8dd6c628.chunk.js": "/Bitcoin_explorer/static/js/2.8dd6c628.chunk.js",
+    "static/js/2.8dd6c628.chunk.js.map": "/Bitcoin_explorer/static/js/2.8dd6c628.chunk.js.map",
+    "static/js/3.b374c852.chunk.js": "/Bitcoin_explorer/static/js/3.b374c852.chunk.js",
+    "static/js/3.b374c852.chunk.js.map": "/Bitcoin_explorer/static/js/3.b374c852.chunk.js.map",
+    "index.html": "/Bitcoin_explorer/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/Bitcoin_explorer/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.8dd6c628.chunk.js.LICENSE.txt": "/Bitcoin_explorer/static/js/2.8dd6c628.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c34ec40e.js",
+    "static/js/2.8dd6c628.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.083e1719.chunk.js"
+  ]
+}
