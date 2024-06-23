@@ -5,10 +5,10 @@ FROM rust:1.63 as builder
 WORKDIR /usr/src/app
 
 # Copy Cargo.toml and Cargo.lock
-COPY ./bitcoin_ingestion/Cargo.toml ./bitcoin_ingestion/Cargo.lock ./
+COPY Cargo.toml Cargo.lock ./
 
 # Copy the source code
-COPY ./bitcoin_ingestion/src ./src
+COPY src ./src
 
 # Build the app
 RUN cargo build --release
