@@ -62,6 +62,9 @@ jobs:
       - name: Build frontend
         run: cd frontend && npm run build
 
+      - name: List build directory contents
+        run: ls -l frontend/build
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
