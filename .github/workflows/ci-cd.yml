@@ -76,6 +76,9 @@ jobs:
         run: ls -l frontend/build
         # This step lists the contents of the build directory for debugging purposes
 
+      - name: List build directory contents
+        run: ls -l frontend/build
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
