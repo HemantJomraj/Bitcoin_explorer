@@ -1,13 +1,14 @@
-# Backend Dockerfile
-
 # Use official Rust image as a base
-FROM rust:1.57.0 as builder
+FROM rust:1.63 as builder
 
 # Set working directory
 WORKDIR /usr/src/app
 
-# Copy source code
-COPY . .
+# Copy Cargo.toml and Cargo.lock
+COPY bitcoin_ingestion/Cargo.toml bitcoin_ingestion/Cargo.lock ./
+
+# Copy the source code
+COPY bitcoin_ingestion/src ./src
 
 # Build the app
 RUN cargo build --release
