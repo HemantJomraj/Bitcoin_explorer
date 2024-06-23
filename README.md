@@ -82,4 +82,3 @@ Before you get started, make sure you have the following installed:
 3. **Metrics Galore**: Explore unique on-chain and off-chain metrics.
 4. **Brag**: Tell your friends you built a Bitcoin Explorer, and they’ll think you’re the next Satoshi Nakamoto.
 ![38dqvy](https://github.com/HemantJomraj/Bitcoin_explorer/assets/69577585/f72339b9-763f-423d-94b4-c804e1f54d93)
->>>>>>> test
