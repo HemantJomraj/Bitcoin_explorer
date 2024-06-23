@@ -13,9 +13,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         # This step checks out the repository code so it can be used in the build process
+        # This step checks out the repository code so it can be used in the build process
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
+        # This step sets up Docker Buildx, which is necessary for building Docker images
         # This step sets up Docker Buildx, which is necessary for building Docker images
 
       - name: Log in to Docker Hub
@@ -23,6 +25,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+        # This step logs into Docker Hub using credentials stored in the repository secrets
         # This step logs into Docker Hub using credentials stored in the repository secrets
 
       - name: Build and push Docker image for bitcoin_ingestion
@@ -32,6 +35,7 @@ jobs:
           tags: ${{ secrets.DOCKER_USERNAME }}/bitcoin_ingestion:latest
           context: ./bitcoin_ingestion
         # This step builds and pushes a Docker image for the bitcoin_ingestion service
+        # This step builds and pushes a Docker image for the bitcoin_ingestion service
 
       - name: Build and push Docker image for api
         uses: docker/build-push-action@v2
@@ -40,6 +44,7 @@ jobs:
           tags: ${{ secrets.DOCKER_USERNAME }}/api:latest
           context: ./api
         # This step builds and pushes a Docker image for the api service
+        # This step builds and pushes a Docker image for the api service
 
       - name: Build and push Docker image for frontend
         uses: docker/build-push-action@v2
@@ -47,6 +52,7 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/frontend:latest
           context: ./frontend
+        # This step builds and pushes a Docker image for the frontend service
         # This step builds and pushes a Docker image for the frontend service
 
   deploy:
@@ -57,19 +63,23 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         # This step checks out the repository code again for the deploy job
+        # This step checks out the repository code again for the deploy job
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '14'
         # This step sets up Node.js with the specified version
+        # This step sets up Node.js with the specified version
 
       - name: Install dependencies
         run: cd frontend && npm install
         # This step installs the required dependencies for the frontend
+        # This step installs the required dependencies for the frontend
 
       - name: Build frontend
         run: cd frontend && npm run build
+        # This step builds the frontend project
         # This step builds the frontend project
 
       - name: List build directory contents
@@ -78,10 +88,12 @@ jobs:
 
       - name: List build directory contents
         run: ls -l frontend/build
+        # This step lists the contents of the build directory for debugging purposes
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.GH_PAT }}
           publish_dir: frontend/build
+        # This step deploys the built frontend to GitHub Pages using a personal access token stored in the repository secrets
         # This step deploys the built frontend to GitHub Pages using a personal access token stored in the repository secrets
