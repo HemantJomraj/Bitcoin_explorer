@@ -1,7 +1,7 @@
 # Backend Dockerfile
 
 # Use official Rust image as a base
-FROM rust:1.55 as builder
+FROM rust:1.57.0 as builder
 
 # Set working directory
 WORKDIR /usr/src/app
