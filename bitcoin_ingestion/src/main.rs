@@ -14,6 +14,7 @@ fn main() {
     ).unwrap();
 
     loop {
+        // Fetch block height and transaction count
         let res = client.get("https://api.blockcypher.com/v1/btc/main")
             .timeout(Duration::from_secs(10))
             .send();
@@ -30,7 +31,7 @@ fn main() {
 
                         if let Some(block_height) = json["height"].as_i64() {
                             let result = pg_client.execute(
-                                "INSERT INTO block_data (block_height) VALUES ($1) ON CONFLICT (block_height) DO NOTHING",
+                                "INSERT INTO block_data (block_height, timestamp) VALUES ($1, NOW()) ON CONFLICT (block_height) DO NOTHING",
                                 &[&block_height]
                             );
                             match result {
@@ -60,6 +61,7 @@ fn main() {
             Err(e) => println!("Error fetching data: {:?}", e),
         }
 
+        // Fetch hash rate
         let res_hashrate = client.get("https://api.blockchain.info/stats")
             .timeout(Duration::from_secs(10))
             .send();

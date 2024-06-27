@@ -27,6 +27,16 @@ app.get('/api/block-height', async (req, res) => {
   }
 });
 
+app.get('/api/block-heights', async (req, res) => {
+  try {
+    const result = await client.query('SELECT block_height FROM block_data ORDER BY block_height DESC LIMIT 10');
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server error');
+  }
+});
+
 app.get('/api/market-price', async (req, res) => {
   try {
     const response = await axios.get('https://api.coindesk.com/v1/bpi/currentprice/BTC.json');
@@ -48,10 +58,30 @@ app.get('/api/transaction-count', async (req, res) => {
   }
 });
 
+app.get('/api/transaction-counts', async (req, res) => {
+  try {
+    const result = await client.query('SELECT transaction_count, created_at FROM transaction_data ORDER BY created_at DESC LIMIT 10');
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server error');
+  }
+});
+
 app.get('/api/hash-rate', async (req, res) => {
   try {
     const result = await client.query('SELECT hash_rate FROM hash_rate_data ORDER BY created_at DESC LIMIT 1');
     res.json(result.rows[0] || { hash_rate: 0 });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server error');
+  }
+});
+
+app.get('/api/hash-rates', async (req, res) => {
+  try {
+    const result = await client.query('SELECT hash_rate, created_at FROM hash_rate_data ORDER BY created_at DESC LIMIT 10');
+    res.json(result.rows);
   } catch (err) {
     console.error(err);
     res.status(500).send('Server error');

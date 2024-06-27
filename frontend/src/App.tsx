@@ -4,6 +4,9 @@ import BlockHeight from './components/BlockHeight';
 import MarketPrice from './components/MarketPrice';
 import TransactionCount from './components/TransactionCount';
 import HashRate from './components/HashRate';
+import HistoricalBlockHeights from './components/HistoricalBlockHeights';
+import HistoricalTransactionCounts from './components/HistoricalTransactionCounts';
+import HistoricalHashRates from './components/HistoricalHashRates';
 
 const Container = styled.div`
   display: flex;
@@ -59,6 +62,18 @@ const App: React.FC = () => {
         <Card>
           <ChartTitle>Hash Rate</ChartTitle>
           <HashRate />
+        </Card>
+        <Card>
+          <ChartTitle>Historical Block Heights</ChartTitle>
+          <HistoricalBlockHeights />
+        </Card>
+        <Card>
+          <ChartTitle>Historical Transaction Counts</ChartTitle>
+          <HistoricalTransactionCounts />
+        </Card>
+        <Card>
+          <ChartTitle>Historical Hash Rates</ChartTitle>
+          <HistoricalHashRates />
         </Card>
       </Section>
     </Container>
