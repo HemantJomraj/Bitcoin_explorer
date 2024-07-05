@@ -1,0 +1,1 @@
+web: ./target/release/your_backend_executable_name
